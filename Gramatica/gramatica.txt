@@ -1,0 +1,21 @@
+program->block
+
+block->startDecl
+
+startDecl -> START LPARENT RPARENT LBRACKET statementDecl RBRACKET
+
+statementDecl -> statementList | e
+
+statementList->statement | statementList
+
+statement -> varDecl | asignDecl  
+
+asignDecl -> ID IGUAL valor   PUNTOCOMA | e
+ 
+varDecl-> tipo varAssingnmentList PUNTOCOMA | e  
+
+tipo-> INT | FLOAT | STRING | BOOLEAN 
+
+varAssignmentList-> ID | varAssignmentList COMA ID 
+
+valor-> CADENA | ENTERO | FLOTANTE | BOOLEANO 
