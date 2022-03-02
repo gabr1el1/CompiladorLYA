@@ -32,25 +32,55 @@ def p_statement(p): #Esta regla define un solo statement
 
 #Por el momento definimos a una expresion como un ID o como un valor 
 def p_expression1(p):
-    '''expression : ID'''
-    print("expression -> ID")
+    '''expression : term'''
+    print("expression -> term")
 
 def p_expression2(p):
-    '''expression : valor'''
-    print("expression -> valor")
+    '''expression : addingOperator term'''
+    print("expression -> addingOperator term")
 
-#Hemos definido los valores posibles en nuestro lenguaje
-def p_valor1(p):
-    '''valor : CADENA'''
-    print("valor -> CADENA")
+def p_expression3(p):
+    '''expression : expression addingOperator term'''
+    print("expression -> expression addingOperator term")
 
-def p_valor2(p):
-    '''valor : ENTERO'''
-    print("valor -> ENTERO")
+def p_term1(p):
+    '''term : factor'''
+    print("term -> factor")
 
-def p_valor3(p):
-    '''valor : FLOTANTE'''
-    print("valor -> FLOTANTE")
+
+def p_term2(p):
+    '''term : term multiplyingOperator factor'''
+    
+    print("term -> term multiplyingOperator factor")
+
+
+def p_multiplyingOperator1(p):
+    '''multiplyingOperator : MULTIPLICACION'''
+    print("multiplyingOperator -> MULTIPLICACION")
+
+def p_multiplyingOperator2(p):
+    '''multiplyingOperator : DIVISION '''
+    print("multiplyingOperator -> DIVISION")
+
+def p_addingOperator1(p):
+    '''addingOperator : MAS '''
+    print("addingOperator -> MAS")
+
+def p_addingOperator2(p):
+    '''multiplyingOperator : MENOS '''
+    print("addingOperator-> MENOS")
+
+def p_factor1(p):
+    '''factor : ID '''
+    print("factor -> ID")
+
+def p_factor2(p):
+    '''factor : ENTERO '''
+    print("factor -> ENTERO")
+
+def p_factor3(p):
+    '''factor : LPARENT expression RPARENT '''
+    print("factor -> LPARENT expression RPARENT")
 
 def p_statementEmpty(p): #Define si el statement está vacío
     '''statement : empty'''
