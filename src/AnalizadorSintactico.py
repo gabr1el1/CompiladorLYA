@@ -31,8 +31,9 @@ def p_statement1(p): #Esta regla define un solo statement
     print("statement -> ID IGUAL expression PUNTOCOMA")
 
 def p_statement2(p):
-    '''statement : tipo PUNTOCOMA'''
-    print("statement -> tipo PUNTOCOMA")
+    '''statement : tipo idList PUNTOCOMA'''
+    print("statement -> tipo idList PUNTOCOMA")
+
 
 def p_tipo1(p):
     '''tipo : INT'''
@@ -45,6 +46,19 @@ def p_tipo2(p):
 def p_tipo3(p):
     '''tipo : STRING'''
     print("tipo -> STRING")
+
+def p_idList1(p):
+    '''idList : ID'''
+    print("idList -> ID")
+
+def p_idList2(p):
+    '''idList : idList COMA ID'''
+    print("idList -> idList COMA ID")
+
+
+
+
+
 
 def p_expression1(p):
     '''expression : term'''
@@ -105,9 +119,7 @@ def p_numero2(p):
     '''numero : FLOTANTE'''
     print("numero -> FLOTANTE")
 
-def p_statementEmpty(p): #Define si el statement está vacío
-    '''statement : empty'''
-    print("statement -> nulo")
+
 
 
 def p_empty(p): 
