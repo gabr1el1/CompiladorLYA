@@ -26,11 +26,26 @@ def p_statementListEmpty(p):
     print("statementList -> nulo")
 
 
-def p_statement(p): #Esta regla define un solo statement
+def p_statement1(p): #Esta regla define un solo statement
     '''statement : ID IGUAL expression PUNTOCOMA'''
     print("statement -> ID IGUAL expression PUNTOCOMA")
 
-#Por el momento definimos a una expresion como un ID o como un valor 
+def p_statement2(p):
+    '''statement : tipo PUNTOCOMA'''
+    print("statement -> tipo PUNTOCOMA")
+
+def p_tipo1(p):
+    '''tipo : INT'''
+    print("tipo -> INT")
+
+def p_tipo2(p):
+    '''tipo : FLOAT'''
+    print("tipo -> FLOAT")
+
+def p_tipo3(p):
+    '''tipo : STRING'''
+    print("tipo -> STRING")
+
 def p_expression1(p):
     '''expression : term'''
     print("expression -> term")
@@ -75,12 +90,20 @@ def p_factor1(p):
     print("factor -> ID")
 
 def p_factor2(p):
-    '''factor : ENTERO '''
+    '''factor : numero '''
     print("factor -> ENTERO")
 
 def p_factor3(p):
     '''factor : LPARENT expression RPARENT '''
     print("factor -> LPARENT expression RPARENT")
+
+def p_numero1(p):
+    '''numero : ENTERO'''
+    print("numero -> ENTERO")
+
+def p_numero2(p):
+    '''numero : FLOTANTE'''
+    print("numero -> FLOTANTE")
 
 def p_statementEmpty(p): #Define si el statement está vacío
     '''statement : empty'''
