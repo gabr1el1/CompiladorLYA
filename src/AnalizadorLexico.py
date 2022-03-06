@@ -1,7 +1,6 @@
 import ply.lex as lex
-tokens = ['ID','LPARENT','RPARENT','LBRACKET','RBRACKET','PUNTOCOMA','MAS','MENOS',
+tokens = ['ID','LPARENT','RPARENT','LBRACKET','RBRACKET','PUNTOCOMA','COMA','MAS','MENOS',
         'MULTIPLICACION','DIVISION','IGUAL','FLOTANTE','ENTERO','CADENA','BOOLEANO']
-
 
 reservadas = {
     'START' : 'start',
@@ -24,6 +23,7 @@ t_RPARENT = r'\)'
 t_LBRACKET = r'\{'
 t_RBRACKET = r'\}'
 t_PUNTOCOMA = r';'
+t_COMA = r','
 t_MAS = r'\+'
 t_MENOS = r'\-'
 t_DIVISION = r'/'
